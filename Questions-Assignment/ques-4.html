@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ques-4</title>
+    <style>
+        .box{
+            display: flex;
+            gap: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="outputDiv">
+
+    </div>
+    <div class="box">
+        <button onclick="resjohn()" id="john">
+            John
+        </button>
+        <button onclick="reskris()" id="kris">
+            Kris
+        </button>
+        <button onclick="reswick()" id="wick">
+            Wick
+        </button>
+    </div>
+</body>
+<script>
+    function resjohn(){
+            document.getElementById("outputDiv").innerHTML="<h1>John</h1>"
+    }
+    function reskris(){
+            document.getElementById("outputDiv").innerHTML="<h1>Kris</h1>"
+    }
+    function reswick(){
+            document.getElementById("outputDiv").innerHTML="<h1>Wick</h1>"
+    }
+</script>
+</html>

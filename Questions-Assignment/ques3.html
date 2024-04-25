@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ques-3</title>
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        div{
+            border: 1px solid;
+            padding: 50px;
+        }
+        button{
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button onclick="changeColor()" id="resultBtn">
+            Change Color
+        </button>
+    </div>
+</body>
+<script>
+    function changeColor(){
+       var res= document.getElementById("resultBtn")
+       res.style="background-color:red; color:white;"
+    }
+</script>
+</html>

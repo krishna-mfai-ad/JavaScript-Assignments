@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question-1</title>
+</head>
+<body>
+    <input onkeyup="typing()" id="inputBox" type="text">
+    <h1 id="result">
+
+    </h1>
+</body>
+<script>
+    function typing()
+    {
+        var value=document.getElementById("inputBox").value
+        var res=document.getElementById("result")
+        res.textContent=value
+    }
+</script>
+</html>
