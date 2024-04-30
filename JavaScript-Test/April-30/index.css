@@ -1,0 +1,21 @@
+body,html{
+    padding: 0px;
+    margin: 0px;
+}
+.container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+}
+#shapeBox{
+    background-color: black;
+    height: 100px;
+    width: 300px;
+}
+button{
+    padding: 5px;
+    width: 50px;
+}
