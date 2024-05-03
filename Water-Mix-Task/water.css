@@ -1,0 +1,150 @@
+/* @keyframes water-on {
+    from {
+      height: 100%;
+      top: 0;
+    }
+    to {
+      height: 0;
+      top: 100%;
+    }
+  } */
+
+
+
+
+
+
+body,
+html {
+    padding: 0px;
+    margin: 0px;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+}
+
+.tanks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 175px;
+}
+
+.tank-1 {
+    position: relative;
+    display: flex;
+    height: 250px;
+    width: 200px;
+    border: 2px solid black;
+    border-top: 0;
+    /* background-color: aqua; */
+}
+
+.water-1 {
+    align-self: flex-end;
+    height: 250px;
+    width: 200px;
+    background-color: aqua;
+}
+
+.tap-1 {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    top: 210px;
+    left: 200px;
+}
+
+#flowOne {
+    position: absolute;
+    top: 256px;
+    left: 241px;
+    height: 195px;
+    width: 8.5px;
+    background-color: aqua;
+}
+
+.tank-2 {
+    position: relative;
+    display: flex;
+    height: 250px;
+    width: 200px;
+    border: 2px solid black;
+    border-top: 0;
+}
+
+.water-2 {
+    align-self: flex-end;
+    height: 250px;
+    width: 200px;
+    background-color:aqua;
+}
+
+.tap-2 {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    top: 210px;
+    left: 200px;
+}
+#flowTwo {
+    position: absolute;
+    top: 256px;
+    left: 241px;
+    height: 195px;
+    width: 8.5px;
+    background-color: aqua;
+}
+
+.tank-3 {
+    position: relative;
+    display: flex;
+    height: 250px;
+    width: 200px;
+    border: 2px solid black;
+    border-top: 0;
+    
+}
+
+.water-3 {
+    align-self: flex-end;
+    height: 250px;
+    width: 200px;
+    background-color: aqua;
+}
+
+.tap-3 {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    top: 210px;
+    left: 200px;
+}
+#flowThree {
+    position: absolute;
+    top: 256px;
+    left: 241px;
+    height: 195px;
+    width: 8.5px;
+    background-color: aqua;
+}
+
+.bottom-tank {
+    display: flex;
+    align-self: center;
+    border: 2px solid;
+    border-top: 0;
+    height: 150px;
+    width: 1120px;
+}
+
+#bottomWater {
+    align-self: flex-end;
+    width: 1120px;
+    background-color: aqua
+}
