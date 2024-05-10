@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Strength</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="passBox">
+            <h2>
+                Password Strength Indicator
+            </h2>
+            <input onkeyup="res()" placeholder="Type Password" id="pass" type="password">
+            <div id="resultDisplay">
+                <p id="strength">
+                    <span id="bad">
+
+                    </span>
+                    <span id="yellow">
+
+                    </span>
+                    <span id="good">
+
+                    </span>
+                </p>
+                <p id="status">
+
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    var inBox = document.getElementById("pass")
+    var red = document.getElementById("bad")
+    var yellow = document.getElementById("yellow")
+    var green = document.getElementById("good")
+    var state = document.getElementById("status")
+    function res() {
+        var input = document.getElementById("pass").value
+        var len = input.length
+
+        if (len > 0) {
+            if (len >= 1) {
+                red.style = "display:block";
+                state.textContent = "Password is Weak"
+            }
+            if (len >= 4) {
+                red.style.display = "block";
+                orange.style.display = "block";
+                state.textContent = "Password is medium"
+                let arr = ['!', '@', '#', '$', '%']
+                for (var el = 0; el < arr.length; el++) {
+                    if (input.charAt(el) == arr[el]) {
+                        red.style.display = "block";
+                        orange.style.display = "block";
+                        green.style.display = "block";
+                        state.textContent = "Password is Strong"
+                    }
+                }
+            }
+            if (len > 8) {
+                let arr = ['!', '@', '#', '$', '%']
+                for (var el = 0; el < arr.length; el++) {
+                    if (input.charAt(el) == arr[el]) {
+                        red.style.display = "block";
+                        orange.style.display = "block";
+                        green.style.display = "block";
+                        state.textContent = "Password is Strong"
+                    }
+                }
+            }
+        }
+        else {
+            red.style.display = "none";
+            orange.style.display = "none";
+            green.style.display = "none";
+            state.textContent = "";
+        }
+    }
+
+</script>
+
+</html>
