@@ -6,7 +6,8 @@ var dataContainer=document.getElementById("dataContainer")
 function displayDatas() {
     // Clear the container first
     dataContainer.innerHTML = '';
-
+    let name = document.querySelector("#conName").value
+    let mail = document.querySelector('#email').value
     let list = JSON.parse(localStorage.getItem('datas')) || [];
 
     list.forEach(function(item, index) {
@@ -15,8 +16,8 @@ function displayDatas() {
         `
         <div id=outBox class="output-box">
         <div>
-        <span>${name}</span>
-        <p>${mail}</p>
+        <span>${item.name}</span>
+        <p>${item.mail}</p>
         </div>
         <button onclick="deleteData()"> Delete </button>
         </div >
