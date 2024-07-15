@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage</title>
+</head>
+
+<body>
+    <input id="input" type="text">
+    <button onclick="create()">
+        Add
+    </button>
+    <div id="list" class="list">
+    </div>
+
+    <script>
+        const input = document.getElementById("input");
+        const listDiv = document.querySelector(".list");
+        function create() {
+            if (input.value === "") {
+                alert("Enter Value!");
+            }
+            else {
+                var localObject = localStorage.getItem("keys")
+                var keys;
+                if (localObject == null) {
+                    keys = []
+                }
+                else {
+                    keys = JSON.parse(localObject)
+                }
+                keys.push({
+                    name: input.value,
+                    id: Date.now()
+                })
+                localStorage.setItem("keys", JSON.stringify(keys))
+                read()
+                input.value = ""
+            }
+
+        }
+        function read() {
+            var localObject = JSON.parse(localStorage.getItem("keys"))
+            const listDiv = document.querySelector(".list");
+
+            listDiv.innerHTML = ""
+
+            localObject.forEach(element => {
+                listDiv.innerHTML +=
+                    `<div id="content">
+                    <p>
+                        ${element.name}
+                    </p>
+                    <button onclick="edit(${element.id})">
+                        Update
+                    </button>
+                    <button onclick="del(${element.id})">
+                        Delete
+                    </button>
+            
+                     </div> `
+            });
+
+        }
+        function del(element) {
+            var temp = JSON.parse(localStorage.getItem("keys"))
+
+            for (let i = 0; i < temp.length; i++) {
+                if (temp[i].id == element) {
+                    temp.splice(i, 1)
+                }
+            }
+
+            localStorage.setItem("keys", JSON.stringify(temp));
+            read();
+
+        }
+        function edit(paras) {
+            var temp = JSON.parse(localStorage.getItem("keys"))
+            var find = temp.find(ele =>
+                ele.id == paras
+            )
+            if (find) {
+                var z = prompt("Edit the Name", find.name);
+                find.name = z;
+                localStorage.setItem("keys", JSON.stringify(temp))
+                read()
+            }
+        }
+        window.onload = read()
+    </script>
+</body>
+
+</html>
